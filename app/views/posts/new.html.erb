@@ -7,7 +7,7 @@
   </head>
   <body>
     <%= simple_form_for @post do |f| %>
-      <%= f.input :caption, label: 'Insert a caption here', error: 'Caption is mandatory, please specify one' %>
+      <%= f.input :caption, label: 'Insert a caption here' %>
       <%= f.input :image, as: :file %>
       <%= f.button :submit %>
     <% end %>
