@@ -13,10 +13,12 @@
     </p>
     <div class="text-center edit-links">
       <%= link_to "Cancel", posts_path %>
-      |
-      <%= link_to "Editar", edit_post_path(@post) %>
-      |
-      <%= link_to "Excluir", post_path(@post), method: :delete, data: { confirm: 'Do you really want to delete?' } %>
+      <% if @post.user.id == current_user.id %>
+        |
+        <%= link_to "Editar", edit_post_path(@post) %>
+        |
+        <%= link_to "Excluir", post_path(@post), method: :delete, data: { confirm: 'Do you really want to delete?' } %>
+      <% end %>
     </div>
   </div><!-- .post -->
 </div><!-- .posts-wrapper -->
