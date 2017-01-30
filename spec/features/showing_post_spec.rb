@@ -10,7 +10,7 @@ feature 'Can view individual posts' do
 
   scenario 'can click and view a single post' do
     visit '/'
-    find(:xpath, "//a[contains(@href, 'posts/1')]").click
-    expect(page.current_path).to eq post_path(1)
+    find(:xpath, "//a[contains(@href, '#{Post.first.id}')]").click
+    expect(page.current_path).to eq post_path(Post.first.id)
   end
 end

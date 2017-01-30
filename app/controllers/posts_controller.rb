@@ -33,7 +33,7 @@ class PostsController < ApplicationController
       flash[:success] = "Successfully updated!"
       redirect_to post_path(@post)
     else
-      flash[:alert].now = "Your post couldn't be updated"
+      flash.now[:alert] = "Your post couldn't be updated"
       render :edit
     end
   end
