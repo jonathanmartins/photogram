@@ -5,7 +5,7 @@ feature 'Editing posts' do
     user = create :user
     user_two = create :user, email: 'hi@hi.com', username: 'BennyBoy'
     post = create :post, user_id: user.id
-    post_two = create :post, user_id: user_id: user_two.id
+    post_two = create :post, user_id: user_two.id
 
     sign_in_with user
     visit '/'
