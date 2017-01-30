@@ -10,7 +10,7 @@ feature 'editing user profiles' do
     # Visit the dashboard.
   end
 
-  scenario 'a user can change their own profile details' do
+  xscenario 'a user can change their own profile details' do
     # Click the first user's user name
     # Click the 'Edit Profile' button.
     # Click the 'Choose new profile image' button.
@@ -23,13 +23,13 @@ feature 'editing user profiles' do
     # Expect to see the updated profile bio.
   end
 
-  scenario 'a user cannot change someone elses profile picture' do
+  xscenario 'a user cannot change someone elses profile picture' do
     # Click the first user's user name
 
     # Expect to not see the 'edit profile' button.
   end
 
-  scenario "a user cannot navigate directly to edit a users profile" do
+  xscenario "a user cannot navigate directly to edit a users profile" do
     # Directly visit another user’s edit url.
 
     # Expect to not see ’Change your profile image:'
