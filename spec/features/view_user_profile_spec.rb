@@ -13,11 +13,11 @@ feature 'viewing user profiles' do
     first('.username').click_link 'user'
   end
 
-  xscenario 'visiting a profile page shows the user name in the url' do
+  scenario 'visiting a profile page shows the user name in the url' do
     expect(page.current_path).to eq(profile_path('user'))
   end
 
-  xscenario "a profile page only shows the specified user's posts" do
+  scenario "a profile page only shows the specified user's posts" do
     expect(page).to have_content 'caption default'
     expect(page).to_not have_content 'other caption'
   end
