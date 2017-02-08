@@ -4,7 +4,7 @@ feature 'viewing user profiles' do
   background do
     user = create(:user)
     user2 = create(:user, email: 'email2@email.com',
-                          username: 'user2')
+                          username: 'usuario')
     post = create(:post, user_id: user.id)
     post2 = create(:post, user_id: user2.id, caption: 'other caption')
 
