@@ -47,6 +47,8 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
+  config.include Devise::Test::ControllerHelpers, type: :controller
+
   config.include FactoryGirl::Syntax::Methods
   config.include AuthHelpers, type: :feature
 

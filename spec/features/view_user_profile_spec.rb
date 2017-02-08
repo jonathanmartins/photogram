@@ -10,10 +10,10 @@ feature 'viewing user profiles' do
 
     sign_in_with user
     visit "/"
-    first('.username').click_link 'user'
+    first(:link, 'user').click
   end
 
-  scenario 'visiting a profile page shows the user name in the url' do
+  scenario 'visiting a profile page shows the username in the url' do
     expect(page.current_path).to eq(profile_path('user'))
   end
 
