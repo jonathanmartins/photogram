@@ -7,9 +7,12 @@
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownmenu1">
       <li class="dropdown-header text-center">Notifications</li>
-      <% current_user.notifications.unread.each do |notification| %>
-        <%= render 'notifications/notification', notification: notification %>
-      <% end %>
+      <%= render current_user.notifications.unread.order('created_at DESC').last(5) %>
+      <li class="divider" role="separator">
+        <li class="text-center">
+          <%= link_to 'View All', notifications_path %>
+        </li>
+      </li>
     </ul>
   </div>
 </li>
