@@ -5,8 +5,8 @@ feature 'Deleting comments' do
     user = create :user
     user_two = create :user, username: 'user2', email: 'email2@email.com'
     @post = create :post, user_id: user.id
-    @comment = create :comment, user_id: user_two.id, post_id: post.id
-    @comment_two = create :comment, content: 'another comment', user_id: user.id, post_id: post.id
+    @comment = create :comment, user_id: user_two.id, post_id: @post.id
+    @comment_two = create :comment, content: 'another comment', user_id: user.id, post_id: @post.id
     sign_in_with user_two
   end
   #########################
