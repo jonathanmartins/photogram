@@ -1,0 +1,15 @@
+<li>
+  <div class="dropdown notification-dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" name="button"
+      id="dropdownmenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      <%= current_user.notifications.count %>
+      <span class="glyphicon glyphicon-flag"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownmenu1">
+      <li class="dropdown-header text-center">Notifications</li>
+      <% current_user.notifications.each do |notification| %>
+        <%= render 'notifications/notification', notification: notification %>
+      <% end %>
+    </ul>
+  </div>
+</li>
