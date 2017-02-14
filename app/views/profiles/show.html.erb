@@ -13,6 +13,12 @@
         <span>
           <% if @user == current_user %>
             <%= link_to 'Editar Perfil', edit_profile_path(@user.username), class: 'btn edit-button' %>
+          <% else %>
+            <%= link_to 'Following', unfollow_user_path,
+            remote: true,
+            class: 'btn unfollow-button',
+            id: 'unfollow-button',
+            method: :post %>
           <% end %>
         </span>
       </div>
@@ -31,6 +37,6 @@
 
 <div id="posts">
   <% @posts.each do |post| %>
-    <%= render 'posts/post', post: post %>
+  <%= render 'posts/post', post: post %>
   <% end %>
 </div>
