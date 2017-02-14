@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get 'profiles/show'
 
+  get 'browse', to: 'posts#browse', as: :browse_posts
+
   devise_for :users, :controllers => { registrations: 'registrations' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :posts do
